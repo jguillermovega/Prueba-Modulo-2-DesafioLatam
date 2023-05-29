@@ -1,0 +1,184 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.logo {
+    height: 5rem;
+    width: 5em;
+    margin-left: 1rem;
+    animation: move 1s infinite;
+    animation-direction: alternate;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+    "nav"
+    "section"
+    "main"
+    "footer";
+}
+
+nav {
+    grid-area: nav;
+    height: 10vh;
+}
+
+section {
+    grid-area: section;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 10vh;
+    background-color: rgb(213, 239, 252);
+    padding-top: 1rem;
+}
+
+main {
+    grid-area: main;
+    height: 75vh;
+}
+
+.card-container {
+    display: grid;
+    grid-template-areas: 
+    "card1";
+    padding-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+.cards {
+    filter: grayscale(1);
+}
+
+.cards:hover{
+    transition: filter 1s ease;
+    filter: grayscale(0);
+}
+
+.card1 {
+    grid-area: card1;
+}
+
+.paginas {
+    text-align: center;
+    height: 10%;
+}
+
+.paginas a {
+    font-size: 20px;
+}
+
+img {
+    height: 20rem;
+    width: 20rem;
+}
+
+.box {
+    display: none;
+}
+
+.card-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
+    height: 10vh;
+    background-color: rgb(61, 216, 243);
+}   
+
+@keyframes move {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(10px);
+    }
+}
+
+@media (min-width: 576px) {
+    .grid-container {
+        grid-template-areas:
+        "nav section section section section section"
+        "nav main main main main main"
+        "footer main main main main main";
+        height: 100vh;
+    }
+
+    nav {
+        height: 90vh;
+    }
+
+    nav .container-fluid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav .container-fluid .navbar-nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    section {
+    grid-area: section;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 10vh;
+    background-color: rgb(155, 215, 245);
+    padding-top: 1rem;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(10px);
+    }
+}
+
+    .card-container {
+        display: grid;
+        grid-template-areas: 
+        "card1 card2 card3 card4"
+        "card5 card6 card7 card8";
+        padding-bottom: 1rem;
+        justify-content: center;
+        align-items: center;
+        height: 90%;
+        gap: 3rem;
+        padding-left: 1rem
+    }
+
+    .paginas {
+        display: none
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h3{
+        text-align: center;
+    }
+
+    main {
+        grid-area: main;
+        height: 90vh;
+    }
+
+    footer {
+        height: 10vh;
+    }
+
+}
